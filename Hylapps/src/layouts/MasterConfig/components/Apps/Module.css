@@ -1,0 +1,153 @@
+/* styles.css */
+/* =====================================
+   Global Settings & Utility Styles
+   ===================================== */
+   :root {
+    /* Colors */
+    --primary-color: #0F67B1;
+    --primary-hover: #004085;
+    --text-color: #333;
+    --background-color: #ffffff;
+    --border-color: #ccc;
+    --green: #28a745;
+    --green-hover: #218838;
+    --red: #dc3545;
+    --red-hover: #c82333;
+  
+    /* Spacing */
+    --base-padding: 1.25rem;    /* 20px */
+    --small-padding: 0.625rem;   /* 10px */
+    --base-margin: 1.25rem;      /* 20px */
+  
+    /* Border Radius */
+    --radius: 0.5rem;           /* 8px */
+  
+    /* Typography */
+    --base-font-size: 1rem;      /* 16px */
+    --small-font-size: 0.75rem;  /* 12px */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    font-size: var(--base-font-size);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+  }
+  
+  /* =====================================
+     Alert Form Container & Form Layout
+     ===================================== */
+  .alert-form-container {
+    max-width: 100%;
+    margin: var(--base-margin) auto;
+    margin-top: -2.5rem;
+    padding: var(--base-padding);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background-color: var(--background-color);
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  /* =====================================
+     Permissions Table Styles
+     ===================================== */
+  .permissions-table-container {
+    width: 100%;
+    max-height: 75vh; /* Set vertical overflow */
+    overflow-x: auto; /* Allow horizontal overflow on smaller devices */
+    overflow-y: auto; /* Allow vertical scrolling */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+  }
+  
+  /* Sticky header applied to all th elements */
+  .permissions-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--border-color);
+    padding: 0.625rem;
+    text-align: center;
+    font-size: var(--small-font-size);
+  }
+  
+  .permissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+  
+  .permissions-table td {
+    border: 1px solid var(--border-color);
+    padding: 0.625rem;
+    text-align: center;
+    font-size: var(--small-font-size);
+  }
+  
+  .permissions-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .permissions-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* =====================================
+     Small Save Button Styles
+     ===================================== */
+  .small-save-button {
+    padding: 0.375rem 0.75rem;
+    font-size: var(--small-font-size);
+    border: none;
+    border-radius: 0.3125rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    max-width: 100px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .small-save-button:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+  }
+  
+  /* =====================================
+     Responsive Adjustments
+     ===================================== */
+  @media (max-width: 768px) {
+    .permissions-table th,
+    .permissions-table td {
+      padding: 0.375rem;
+      font-size: 0.7rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .alert-form-container {
+      padding: var(--small-padding);
+    }
+    .permissions-table th,
+    .permissions-table td {
+      padding: 0.25rem;
+      font-size: 0.65rem;
+    }
+  }
+  

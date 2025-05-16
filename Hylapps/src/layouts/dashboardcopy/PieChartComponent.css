@@ -1,0 +1,101 @@
+/* Button styling */
+.pie-chart-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 9px;
+  background-color: #0F67B1;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.pie-chart-button:hover {
+  background-color: #0C4E89;
+}
+
+/* Chart container styling */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+}
+
+/* Header container styling */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Responsive pie chart container */
+.pie-chart-container {
+  width: 100%;
+  max-width: 600px; /* You can adjust the max width as needed */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Dropdown styling */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #cccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 0 12px;
+  cursor: pointer;
+  color: #0F67B1;
+  font-weight: 500;
+}
+
+/* Custom tooltip styling */
+.custom-tooltip {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 12px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .pie-chart-container {
+    margin: 10px;
+  }
+  .pie-chart-button {
+    font-size: 12px;
+  }
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+}

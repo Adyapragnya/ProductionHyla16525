@@ -1,0 +1,167 @@
+/* Base container styles */
+.simple-timeline-container {
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Timeline Controls */
+.simple-timeline-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.simple-timeline-controls button {
+  background-color: #0f67b1;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.simple-timeline-controls button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.simple-timeline-controls button:hover:not(:disabled) {
+  background-color: #0d5fa1;
+  transform: scale(1.1);
+}
+
+/* Timeline Container */
+.simple-timeline {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* Hide scrollbar but allow scrolling */
+.simple-timeline::-webkit-scrollbar {
+  height: 6px;
+  display: none;
+}
+
+.simple-timeline::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.simple-timeline-item {
+  flex: 0 0 auto;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 180px;
+  max-width: 220px;
+  position: relative;
+  text-align: center;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Active state with neutral effect */
+.simple-timeline-item.active {
+  transform: scale(1.05);
+  background-color: #f9f9f9; /* Neutral background */
+  color: #333; /* Default text color */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ddd; /* Same as regular border color */
+}
+
+.simple-timeline-item:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-marker {
+  width: 18px;
+  height: 18px;
+  background: #0f67b1; /* Keeping a soft marker color */
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-details h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.event-details p {
+  margin: 4px 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.event-details p span {
+  font-weight: bold;
+  color: #0f67b1;
+}
+
+/* Loading, error, and no-events text */
+.loading, .error, .no-events {
+  text-align: center;
+  color: #444;
+  font-size: 16px;
+  margin: 30px 0;
+  font-weight: 500;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .simple-timeline-controls button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .simple-timeline-item {
+    min-width: 160px;
+    padding: 14px;
+  }
+
+  .event-details h4 {
+    font-size: 14px;
+  }
+
+  .event-details p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-timeline-controls button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .simple-timeline-item {
+    min-width: 140px;
+    padding: 12px;
+  }
+
+  .event-details h4 {
+    font-size: 12px;
+  }
+
+  .event-details p {
+    font-size: 10px;
+  }
+}
+
+

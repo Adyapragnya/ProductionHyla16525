@@ -1,0 +1,35 @@
+/* VesselDetailsTable.css */
+.vessel-table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .vessel-search {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .vessel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  .vessel-table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .vessel-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  .vessel-table tr:hover {
+    background-color: #e8f4fd;
+    cursor: pointer;
+  }
+  .vessel-table tr.highlighted {
+    border-left: 4px solid #2196F3;
+    background-color: #f0f8ff;
+  }
+  

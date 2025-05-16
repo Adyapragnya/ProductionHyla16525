@@ -1,0 +1,76 @@
+/* WristAnalytics.css */
+
+/* Define reusable variables */
+:root {
+  --card-bg: #fff;
+  --card-border: #ddd;
+  --card-radius: 8px;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --header-bg: #0F67B1;
+  --header-color: #fff;
+  --header-font-size: 18px;
+  --header-font-size-mobile: 16px;
+  --max-card-width: 1200px;
+  --iframe-height-desktop: 600px;
+  --iframe-height-tablet: 400px;
+  --iframe-height-mobile: 300px;
+}
+
+/* Card container styling */
+.card {
+  position: relative;
+  z-index: 10; /* Ensures the card appears above other elements */
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: var(--max-card-width);
+  margin-top: -60px; /* Adjust this as needed to overlap header/banner images */
+}
+
+/* Card header styling */
+.card-header {
+  padding: 6px;
+  background: var(--header-bg);
+  color: var(--header-color);
+  font-size: var(--header-font-size);
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Card body styling */
+.card-body {
+  padding: 16px;
+}
+
+/* Iframe styling */
+.superset-iframe {
+  width: 100%;
+  height: var(--iframe-height-desktop);
+  border: none;
+  display: block;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+  .superset-iframe {
+    height: var(--iframe-height-tablet);
+  }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+  .card {
+    margin: 10px;
+  }
+  
+  .card-header {
+    font-size: var(--header-font-size-mobile);
+  }
+  
+  .superset-iframe {
+    height: var(--iframe-height-mobile);
+  }
+}
