@@ -3481,7 +3481,7 @@ async function checkAndUpdateVesselData() {
               geofenceDetails: isInsideAnyGeofence ? geofenceDetails : null,
             });
             console.log(`Vessel ${NAME} (IMO: ${IMO}) location updated.`);
-            await TrackedVessel.updateOne({ IMO: vessel.IMO }, { lastFetchTime: currentTime });
+            // await TrackedVessel.updateOne({ IMO: vessel.IMO }, { lastFetchTime: currentTime });
             
             const bufferExists = await VesselBufferGeofence.countDocuments({ IMO: apiData.IMO });
             if (bufferExists > 0) {
@@ -3495,6 +3495,8 @@ async function checkAndUpdateVesselData() {
             }
           } 
         else {
+            await TrackedVessel.updateOne({ _id: vessel._id }, { lastFetchTime: currentTime });
+
             console.log(`Vessel ${NAME} (IMO: ${IMO}) location unchanged. Skipping update.`);
           }
 
